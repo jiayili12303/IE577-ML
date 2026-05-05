@@ -19,6 +19,7 @@ from jiayi_ml.supervised.random_forest import (
     RandomForestClassifier,
     RandomForestRegressor,
 )
+from jiayi_ml.supervised.svm import LinearSVM
 
 __all__ = [
     "LinearRegression",
@@ -33,4 +34,5 @@ __all__ = [
     "RandomForestClassifier",
     "RandomForestRegressor",
     "Perceptron",
+    "LinearSVM",
 ]

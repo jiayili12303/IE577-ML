@@ -23,7 +23,8 @@ examples/
 │   ├── 03_knn_iris.ipynb
 │   ├── 04_decision_tree_random_forest_wine.ipynb
 │   ├── 05_naive_bayes_breast_cancer.ipynb
-│   └── 06_perceptron_binary_classification.ipynb
+│   ├── 06_perceptron_binary_classification.ipynb
+│   └── 11_linear_svm_breast_cancer.ipynb
 └── unsupervised_learning/
     ├── 07_kmeans_blobs.ipynb
     ├── 08_dbscan_moons.ipynb
@@ -41,6 +42,7 @@ examples/
 | `04_decision_tree_random_forest_wine.ipynb` | Decision Tree, Random Forest | Wine dataset | Tree-based classification, overfitting, ensemble stability, feature importance |
 | `05_naive_bayes_breast_cancer.ipynb` | Gaussian Naive Bayes | Breast Cancer dataset | Probabilistic classification, independence assumptions |
 | `06_perceptron_binary_classification.ipynb` | Perceptron | Synthetic binary classification datasets | Linear separability, mistake-driven learning, nonlinear limitations |
+| `11_linear_svm_breast_cancer.ipynb` | Linear SVM | Breast Cancer dataset | Margin-based binary classification, hinge loss, regularization, decision scores |
 
 ## Unsupervised Learning Notebooks
 
@@ -60,7 +62,7 @@ This choice improves reproducibility because the notebooks do not require extern
 The examples are also designed to connect algorithm behavior with interpretable data science questions:
 
 - The Diabetes dataset is used for regression and regularization.
-- The Breast Cancer dataset is used for binary classification, probabilistic classification, and dimensionality reduction.
+- The Breast Cancer dataset is used for binary classification, probabilistic classification, margin-based classification, and dimensionality reduction.
 - The Iris dataset is used for distance-based multiclass classification.
 - The Wine dataset is used for tree-based classification and hierarchical clustering.
 - Synthetic datasets are used when they provide clearer visualization of algorithm behavior.

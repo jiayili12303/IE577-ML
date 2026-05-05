@@ -31,7 +31,8 @@ IE577-ML/
 │   │   ├── 03_knn_iris.ipynb
 │   │   ├── 04_decision_tree_random_forest_wine.ipynb
 │   │   ├── 05_naive_bayes_breast_cancer.ipynb
-│   │   └── 06_perceptron_binary_classification.ipynb
+│   │   ├── 06_perceptron_binary_classification.ipynb
+│   │   └── 11_linear_svm_breast_cancer.ipynb
 │   └── unsupervised_learning/
 │       ├── 07_kmeans_blobs.ipynb
 │       ├── 08_dbscan_moons.ipynb
@@ -116,6 +117,7 @@ The supervised learning module includes:
 | Random Forest Classifier | `RandomForestClassifier` |
 | Random Forest Regressor | `RandomForestRegressor` |
 | Perceptron | `Perceptron` |
+| Linear Support Vector Machine | `LinearSVM` |
 
 ### Unsupervised Learning
 
@@ -205,6 +207,25 @@ print(predictions)
 print(probabilities)
 ```
 
+### Linear SVM
+
+```python
+import numpy as np
+from jiayi_ml.supervised import LinearSVM
+
+X = np.array([[-2], [-1], [1], [2]])
+y = np.array([0, 0, 1, 1])
+
+model = LinearSVM(learning_rate=0.05, max_iter=5000, alpha=0.01)
+model.fit(X, y)
+
+predictions = model.predict(X)
+decision_scores = model.decision_function(X)
+
+print(predictions)
+print(decision_scores)
+```
+
 ### K-Means
 
 ```python
@@ -238,6 +259,7 @@ The `examples/` directory contains Jupyter notebooks demonstrating the algorithm
 | `04_decision_tree_random_forest_wine.ipynb` | Decision Tree, Random Forest | Wine dataset | Tree-based classification, overfitting, ensemble stability, feature importance |
 | `05_naive_bayes_breast_cancer.ipynb` | Gaussian Naive Bayes | Breast Cancer dataset | Probabilistic classification, independence assumptions |
 | `06_perceptron_binary_classification.ipynb` | Perceptron | Synthetic binary classification datasets | Linear separability, mistake-driven learning, nonlinear limitations |
+| `11_linear_svm_breast_cancer.ipynb` | Linear SVM | Breast Cancer dataset | Margin-based binary classification, hinge loss, regularization, decision scores |
 
 ### Unsupervised Learning Notebooks
 
@@ -251,14 +273,15 @@ The `examples/` directory contains Jupyter notebooks demonstrating the algorithm
 Each notebook includes:
 
 1. Problem statement
-2. Dataset description
-3. Exploratory data analysis
-4. Preprocessing
-5. Model training
-6. Evaluation or interpretation
-7. Discussion of results
-8. Limitations
-9. Conclusion
+2. Modeling hypothesis
+3. Dataset description
+4. Exploratory data analysis
+5. Preprocessing
+6. Model training
+7. Evaluation or interpretation
+8. Discussion of results
+9. Limitations
+10. Conclusion
 
 ## Dataset Choices
 
@@ -269,7 +292,7 @@ This choice improves reproducibility because the notebooks do not require extern
 The examples are designed to connect algorithm behavior with interpretable data science questions:
 
 - The Diabetes dataset is used for regression and regularization.
-- The Breast Cancer dataset is used for binary classification, probabilistic classification, and dimensionality reduction.
+- The Breast Cancer dataset is used for binary classification, probabilistic classification, margin-based classification, and dimensionality reduction.
 - The Iris dataset is used for distance-based multiclass classification.
 - The Wine dataset is used for tree-based classification and hierarchical clustering.
 - Synthetic datasets are used when they provide clearer visualization of algorithm behavior.
