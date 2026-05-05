@@ -32,7 +32,8 @@ IE577-ML/
 │   │   ├── 04_decision_tree_random_forest_wine.ipynb
 │   │   ├── 05_naive_bayes_breast_cancer.ipynb
 │   │   ├── 06_perceptron_binary_classification.ipynb
-│   │   └── 11_linear_svm_breast_cancer.ipynb
+│   │   ├── 11_linear_svm_breast_cancer.ipynb
+│   │   └── 12_gradient_boosting_regression_diabetes.ipynb
 │   └── unsupervised_learning/
 │       ├── 07_kmeans_blobs.ipynb
 │       ├── 08_dbscan_moons.ipynb
@@ -118,6 +119,7 @@ The supervised learning module includes:
 | Random Forest Regressor | `RandomForestRegressor` |
 | Perceptron | `Perceptron` |
 | Linear Support Vector Machine | `LinearSVM` |
+| Gradient Boosting Regressor | `GradientBoostingRegressor` |
 
 ### Unsupervised Learning
 
@@ -226,6 +228,26 @@ print(predictions)
 print(decision_scores)
 ```
 
+### Gradient Boosting Regressor
+
+```python
+import numpy as np
+from jiayi_ml.supervised import GradientBoostingRegressor
+
+X = np.array([[0], [1], [2], [3], [4]])
+y = np.array([0.0, 1.0, 2.0, 3.0, 4.0])
+
+model = GradientBoostingRegressor(
+    n_estimators=20,
+    learning_rate=0.1,
+    max_depth=2,
+)
+model.fit(X, y)
+
+predictions = model.predict(X)
+print(predictions)
+```
+
 ### K-Means
 
 ```python
@@ -260,6 +282,7 @@ The `examples/` directory contains Jupyter notebooks demonstrating the algorithm
 | `05_naive_bayes_breast_cancer.ipynb` | Gaussian Naive Bayes | Breast Cancer dataset | Probabilistic classification, independence assumptions |
 | `06_perceptron_binary_classification.ipynb` | Perceptron | Synthetic binary classification datasets | Linear separability, mistake-driven learning, nonlinear limitations |
 | `11_linear_svm_breast_cancer.ipynb` | Linear SVM | Breast Cancer dataset | Margin-based binary classification, hinge loss, regularization, decision scores |
+| `12_gradient_boosting_regression_diabetes.ipynb` | Gradient Boosting Regressor | Diabetes dataset | Additive ensemble regression, residual fitting, learning rate and estimator sensitivity |
 
 ### Unsupervised Learning Notebooks
 
@@ -291,7 +314,7 @@ This choice improves reproducibility because the notebooks do not require extern
 
 The examples are designed to connect algorithm behavior with interpretable data science questions:
 
-- The Diabetes dataset is used for regression and regularization.
+- The Diabetes dataset is used for regression, regularization, and gradient boosting.
 - The Breast Cancer dataset is used for binary classification, probabilistic classification, margin-based classification, and dimensionality reduction.
 - The Iris dataset is used for distance-based multiclass classification.
 - The Wine dataset is used for tree-based classification and hierarchical clustering.

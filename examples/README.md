@@ -5,12 +5,13 @@ This directory contains Jupyter notebooks demonstrating the machine learning alg
 Each notebook shows not only how to call the package, but also how to perform a complete data science workflow:
 
 1. Define the machine learning task.
-2. Describe the dataset.
-3. Perform exploratory data analysis.
-4. Apply appropriate preprocessing.
-5. Fit the model using the custom implementation.
-6. Evaluate the model on held-out data or interpret unsupervised results.
-7. Discuss strengths, limitations, and practical implications.
+2. State a modeling hypothesis.
+3. Describe the dataset.
+4. Perform exploratory data analysis.
+5. Apply appropriate preprocessing.
+6. Fit the model using the custom implementation.
+7. Evaluate the model on held-out data or interpret unsupervised results.
+8. Discuss strengths, limitations, and practical implications.
 
 ## Directory Structure
 
@@ -24,7 +25,8 @@ examples/
 │   ├── 04_decision_tree_random_forest_wine.ipynb
 │   ├── 05_naive_bayes_breast_cancer.ipynb
 │   ├── 06_perceptron_binary_classification.ipynb
-│   └── 11_linear_svm_breast_cancer.ipynb
+│   ├── 11_linear_svm_breast_cancer.ipynb
+│   └── 12_gradient_boosting_regression_diabetes.ipynb
 └── unsupervised_learning/
     ├── 07_kmeans_blobs.ipynb
     ├── 08_dbscan_moons.ipynb
@@ -43,6 +45,7 @@ examples/
 | `05_naive_bayes_breast_cancer.ipynb` | Gaussian Naive Bayes | Breast Cancer dataset | Probabilistic classification, independence assumptions |
 | `06_perceptron_binary_classification.ipynb` | Perceptron | Synthetic binary classification datasets | Linear separability, mistake-driven learning, nonlinear limitations |
 | `11_linear_svm_breast_cancer.ipynb` | Linear SVM | Breast Cancer dataset | Margin-based binary classification, hinge loss, regularization, decision scores |
+| `12_gradient_boosting_regression_diabetes.ipynb` | Gradient Boosting Regressor | Diabetes dataset | Additive ensemble regression, residual fitting, learning rate and estimator sensitivity |
 
 ## Unsupervised Learning Notebooks
 
@@ -61,7 +64,7 @@ This choice improves reproducibility because the notebooks do not require extern
 
 The examples are also designed to connect algorithm behavior with interpretable data science questions:
 
-- The Diabetes dataset is used for regression and regularization.
+- The Diabetes dataset is used for regression, regularization, and gradient boosting.
 - The Breast Cancer dataset is used for binary classification, probabilistic classification, margin-based classification, and dimensionality reduction.
 - The Iris dataset is used for distance-based multiclass classification.
 - The Wine dataset is used for tree-based classification and hierarchical clustering.
@@ -94,14 +97,15 @@ Each notebook follows this general structure:
 
 ```text
 1. Problem Statement
-2. Dataset Description
-3. Exploratory Data Analysis
-4. Preprocessing
-5. Model Training
-6. Evaluation or Interpretation
-7. Discussion
-8. Limitations
-9. Conclusion
+2. Modeling Hypothesis
+3. Dataset Description
+4. Exploratory Data Analysis
+5. Preprocessing
+6. Model Training
+7. Evaluation or Interpretation
+8. Discussion
+9. Limitations
+10. Conclusion
 ```
 
 ## Reproducibility

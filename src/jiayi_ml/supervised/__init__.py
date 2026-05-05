@@ -6,6 +6,7 @@ from jiayi_ml.supervised.decision_tree import (
     DecisionTreeClassifier,
     DecisionTreeRegressor,
 )
+from jiayi_ml.supervised.gradient_boosting import GradientBoostingRegressor
 from jiayi_ml.supervised.knn import KNNClassifier, KNNRegressor
 from jiayi_ml.supervised.linear_regression import (
     LassoRegression,
@@ -35,4 +36,5 @@ __all__ = [
     "RandomForestRegressor",
     "Perceptron",
     "LinearSVM",
+    "GradientBoostingRegressor",
 ]
