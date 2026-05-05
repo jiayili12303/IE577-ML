@@ -8350,7 +8350,8 @@ Cluster counts: [113 113 103 121]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>A strong clustering result should show that each true group mostly maps to one discovered cluster. The numeric cluster labels themselves are arbitrary, so cluster 0 does not need to correspond to true group 0.
+<p>The contingency table shows that K-Means clearly separates two of the synthetic groups, but the other two groups are partially mixed across two clusters. This means the clustering result captures much of the blob structure but does not perfectly recover all four true generating groups.
+This is a useful result because it shows both the strength and limitation of K-Means: it performs well when groups are compact and separated, but nearby or overlapping groups can still be split or mixed. The numeric cluster labels are arbitrary, so cluster 0 does not need to correspond to true group 0.
 In this result, true groups 0 and 1 are each cleanly assigned to a single cluster. However, true groups 2 and 3 are split across two clusters, indicating that K-Means partially mixes these two nearby groups. This is a realistic outcome: K-Means performs well when groups are compact and well separated, but nearby or overlapping groups can still be mixed.</p>
 </div>
 </div>
@@ -8647,7 +8648,8 @@ The elbow method is useful but subjective. It should be combined with domain kno
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="10.-Interpretation">10. Interpretation<a class="anchor-link" href="#10.-Interpretation">¶</a></h2><p>K-Means successfully identifies the main groups in this synthetic blob dataset because the data structure matches the algorithm's assumptions.</p>
+<h2 id="10.-Interpretation">10. Interpretation<a class="anchor-link" href="#10.-Interpretation">¶</a></h2><p>K-Means captures the main structure of this synthetic blob dataset, but it does not perfectly recover all four true generating groups. Two groups are separated clearly, while two nearby groups are partially mixed.
+This result is realistic and useful: K-Means can provide meaningful distance-based groupings, but its output should not be treated as ground truth without additional validation.</p>
 <p>The cluster centers provide a compact summary of the data. However, the clusters should be interpreted as distance-based groups, not necessarily as meaningful real-world categories unless supported by domain knowledge.</p>
 </div>
 </div>
