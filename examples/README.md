@@ -2,14 +2,14 @@
 
 This directory contains Jupyter notebooks demonstrating the machine learning algorithms implemented in the `jiayi_ml` package.
 
-Each notebook is designed to show not only how to call the package, but also how to perform a complete data science workflow:
+Each notebook shows not only how to call the package, but also how to perform a complete data science workflow:
 
 1. Define the machine learning task.
 2. Describe the dataset.
 3. Perform exploratory data analysis.
 4. Apply appropriate preprocessing.
 5. Fit the model using the custom implementation.
-6. Evaluate the model on held-out data or interpret clustering results.
+6. Evaluate the model on held-out data or interpret unsupervised results.
 7. Discuss strengths, limitations, and practical implications.
 
 ## Directory Structure
@@ -18,21 +18,31 @@ Each notebook is designed to show not only how to call the package, but also how
 examples/
 ├── README.md
 ├── supervised_learning/
+│   ├── 01_linear_ridge_lasso_regression_diabetes.ipynb
+│   ├── 02_logistic_regression_breast_cancer.ipynb
+│   ├── 03_knn_iris.ipynb
+│   ├── 04_decision_tree_random_forest_wine.ipynb
+│   ├── 05_naive_bayes_breast_cancer.ipynb
+│   └── 06_perceptron_binary_classification.ipynb
 └── unsupervised_learning/
+    ├── 07_kmeans_blobs.ipynb
+    ├── 08_dbscan_moons.ipynb
+    ├── 09_hierarchical_clustering_wine.ipynb
+    └── 10_pca_breast_cancer.ipynb
 ```
 
-## Planned Supervised Learning Notebooks
+## Supervised Learning Notebooks
 
 | Notebook | Algorithms | Dataset | Main Focus |
 |---|---|---|---|
 | `01_linear_ridge_lasso_regression_diabetes.ipynb` | Linear Regression, Ridge Regression, Lasso Regression | Diabetes dataset | Regression performance, regularization, coefficient shrinkage |
 | `02_logistic_regression_breast_cancer.ipynb` | Logistic Regression | Breast Cancer dataset | Binary classification, confusion matrix, recall, false negatives |
-| `03_knn_iris.ipynb` | KNN Classifier, KNN Regressor | Iris dataset and simple regression data | Effect of k, distance-based learning, decision boundaries |
+| `03_knn_iris.ipynb` | KNN Classifier, KNN Regressor | Iris dataset and synthetic regression data | Effect of k, distance-based learning, decision boundaries |
 | `04_decision_tree_random_forest_wine.ipynb` | Decision Tree, Random Forest | Wine dataset | Tree-based classification, overfitting, ensemble stability, feature importance |
 | `05_naive_bayes_breast_cancer.ipynb` | Gaussian Naive Bayes | Breast Cancer dataset | Probabilistic classification, independence assumptions |
-| `06_perceptron_binary_classification.ipynb` | Perceptron | Synthetic binary classification dataset | Linear separability, mistake-driven learning |
+| `06_perceptron_binary_classification.ipynb` | Perceptron | Synthetic binary classification datasets | Linear separability, mistake-driven learning, nonlinear limitations |
 
-## Planned Unsupervised Learning Notebooks
+## Unsupervised Learning Notebooks
 
 | Notebook | Algorithms | Dataset | Main Focus |
 |---|---|---|---|
@@ -47,10 +57,11 @@ The notebooks use built-in datasets from `scikit-learn` and synthetic datasets g
 
 This choice improves reproducibility because the notebooks do not require external downloads or private datasets.
 
-The examples are also designed to connect algorithm behavior with interpretable data science questions. For example:
+The examples are also designed to connect algorithm behavior with interpretable data science questions:
 
 - The Diabetes dataset is used for regression and regularization.
-- The Breast Cancer dataset is used for clinically motivated binary classification and dimensionality reduction.
+- The Breast Cancer dataset is used for binary classification, probabilistic classification, and dimensionality reduction.
+- The Iris dataset is used for distance-based multiclass classification.
 - The Wine dataset is used for tree-based classification and hierarchical clustering.
 - Synthetic datasets are used when they provide clearer visualization of algorithm behavior.
 
@@ -58,11 +69,26 @@ The examples are also designed to connect algorithm behavior with interpretable 
 
 For supervised learning notebooks, models are evaluated on held-out test data using appropriate metrics.
 
-For unsupervised learning notebooks, results are interpreted through cluster structure, visualization, or comparison with known labels only after clustering. True labels are not used for model fitting in unsupervised examples.
+Regression examples use:
+
+- Mean squared error
+- Root mean squared error
+- Mean absolute error
+- R-squared
+
+Classification examples use:
+
+- Accuracy
+- Precision
+- Recall
+- F1 score
+- Confusion matrix
+
+For unsupervised learning notebooks, results are interpreted through cluster structure, visualization, explained variance, reconstruction error, or comparison with known labels only after clustering. True labels are not used for model fitting in unsupervised examples.
 
 ## Notebook Template
 
-Each notebook should follow this structure:
+Each notebook follows this general structure:
 
 ```text
 1. Problem Statement
@@ -73,4 +99,15 @@ Each notebook should follow this structure:
 6. Evaluation or Interpretation
 7. Discussion
 8. Limitations
+9. Conclusion
 ```
+
+## Reproducibility
+
+All notebooks are designed to run from the repository after installing the local package:
+
+```bash
+pip install -e ".[dev]"
+```
+
+The notebooks import the local `jiayi_ml` package from the repository `src/` directory.
